@@ -1,0 +1,18 @@
+<project name="TP4" default="compile" basedir=".">
+	<description> Build du TP3</description>
+	<property name="src" location="src"/>
+	<property name="build" location="build"/>
+
+	<target name="creationDossier">
+		<tstamp/>
+		<mkdir dir="${build}"/>
+	</target>
+	<target name="compilation" depends="creationDossier" description="compilation des fichiers java ">
+		<javac srcdir="${src}" destdir="${build}"/>
+	</target>
+
+	<target name="effacer" description="effacer les dossiers" >
+		<delete dir="${build}"/>
+		<delete dir="${dist}"/>
+	</target>
+</project>
